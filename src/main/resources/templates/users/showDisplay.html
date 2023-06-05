@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		crossorigin="anonymous"
+	/>
+	<link rel="stylesheet" href="stylesheets/app.css" />
+	<body>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/home"
+								>Home</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/display"
+								>Display</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="/add.html">Add</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Navbar -->
+
+		<!-- Table -->
+		<table class="table table-striped w-50 table-home">
+			<thead>
+				<tr>
+					<th scope="col"></th>
+					<th scope="col">Name</th>
+					<th scope="col">Weight</th>
+					<th scope="col">Height</th>
+					<th scope="col">Hair Color</th>
+					<th scope="col">Major</th>
+					<th scope="col">GPA</th>
+					<th scope="col">Gender</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="student:${us}">
+					<th scope="row">1</th>
+					<td th:text="${student.name}"></td>
+					<td th:text="${student.weight}"></td>
+					<td th:text="${student.height}"></td>
+					<td th:text="${student.hairColor}"></td>
+					<td th:text="${student.major}"></td>
+					<td th:text="${student.gpa}"></td>
+					<td th:text="${student.gender}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		crossorigin="anonymous"
+	/>
+	<link rel="stylesheet" href="stylesheets/app.css" />
+	<body>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/home"
+								>Home</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/display"
+								>Display</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="/add.html">Add</a>
+						</li>
+						<!-- <li class="nav-item">
+							<a class="nav-link" href="#">Add</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Navbar -->
+
+		<div class="ml-5 mr-5 mt-5">
+			<div class="row">
+				<!-- Card header but use mapping -->
+				<div class="col-3" th:each="student:${us}">
+					<div class="card mb-5" style="max-width: 18rem">
+						<div
+							class="card-header text-white card-header-showAll"
+							th:text="${student.name}"
+							th:style="'background-color:' + ${student.hairColor}"
+						></div>
+						<div class="card-body">
+							<!-- <p th:text="${student.uid}"></p> -->
+							<p class="card-text">Weight<span style="margin-left: 41px" th:text="': '+${student.weight} + ' kg'"></span>
+							</p>
+							<p class="card-text">Height<span style="margin-left: 45px" th:text="': '+${student.height} + ' cm'"></span>
+							</p>
+							<p class="card-text">Hair Color<span style="margin-left: 21px" th:text="': '+${student.hairColor}"></span>
+							</p>
+							<p class="card-text">Major<span style="margin-left: 55px" th:text="': '+${student.major}"></span>
+							</p>
+							<p class="card-text">GPA<span style="margin-left: 65px" th:text="': '+${student.gpa}"></span>
+							</p>
+							<p class="card-text">Gender<span style="margin-left: 43px" th:text="': '+${student.gender}"></span>
+							</p>
+						</div>
+						<div class="card-body-showAll">
+							<a href="#" th:href="@{/student/edit/{uid} (uid=${student.uid})}" class="btn btn-primary mr-3">Update</a>
+							<a href="#"  class="btn btn-outline-primary" th:href="@{/student/delete/{uid} (uid=${student.uid
+							})}">Delete</a>
+						</div>
+					</div>
+				</div>
+		</div>
+	</body>
+</html>

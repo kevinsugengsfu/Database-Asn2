@@ -1,0 +1,24 @@
+.table-home {
+	margin-top: 75px;
+	margin-left: 50px;
+	border: 0.8px solid #dfe2e7;
+}
+
+.form-add {
+	margin-top: 50px;
+	margin-left: 50px;
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 30px;
+}
+.card-header-showAll {
+	font-size: 20px;
+	letter-spacing: 0.5px;
+}
+.card-body-showAll {
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.container-add {
+	padding-left: 31px;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		crossorigin="anonymous"
+	/>
+	<link rel="stylesheet" href="stylesheets/app.css" />
+	<body>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid container-add">
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/home"
+								>Home</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/display"
+								>Display</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="/add.html">Add</a>
+						</li>
+						<!-- <li class="nav-item">
+									<a class="nav-link" href="#">Add</a>
+								</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Navbar -->
+
+		<div class="d-flex justify-content-center align-items-center">
+			<form class="w-25 form-add mt-3" action="/add" method="post">
+				<div class="form-group">
+					<label for="formGroupNameInput">Name</label>
+					<input
+						type="text"
+						class="form-control mt-2"
+						name="name"
+						id="formGroupNameInput"
+						placeholder="Name"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupWeightInput">Weight (kg)</label>
+					<input
+						type="number"
+						class="form-control mt-2"
+						name="weight"
+						id="formGroupWeightInput"
+						placeholder="Weight (kg)"
+						autocomplete="off"
+						step="any"
+						min="0"
+						onkeyup="if(value<0) value=0;"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupHeightInput">Height (cm)</label>
+					<input
+						type="number"
+						class="form-control mt-2"
+						name="height"
+						id="formGroupHeightInput"
+						placeholder="Height (cm)"
+						autocomplete="off"
+						step="any"
+						min="0"
+						onkeyup="if(value<0) value=0;"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupHairColorInput">Hair Color</label>
+					<input
+						type="text"
+						class="form-control mt-2"
+						name="hairColor"
+						id="formGroupHairColorInput"
+						placeholder="Hair Color"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupMajorInput">Major</label>
+					<input
+						type="text"
+						class="form-control mt-2"
+						name="major"
+						id="formGroupMajorInput"
+						placeholder="Major"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupGPAInput">GPA</label>
+					<input
+						type="number"
+						class="form-control mt-2"
+						name="gpa"
+						id="formGroupGPAInput"
+						placeholder="GPA"
+						step="any"
+						min="0"
+						onkeyup="if(value<0) value=0;"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupGenderInput">Gender</label>
+					<select
+						class="form-select mt-2"
+						aria-label="Default select example"
+						name="gender"
+					>
+						<!-- <option selected>Gender</option> -->
+						<option selected value=""></option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="Others">Others</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-primary mt-4">Submit</button>
+			</form>
+		</div>
+	</body>
+</html>

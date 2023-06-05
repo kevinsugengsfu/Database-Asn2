@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<!-- <link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		crossorigin="anonymous"
+	/> -->
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		crossorigin="anonymous"
+	/>
+	<link rel="stylesheet" href="stylesheets/app.css" />
+	<body>
+		<h3 class="mb-3 mt-5 text-center">Updated</h3>
+		<div class="d-flex justify-content-center align-items-center mt-5">
+			<form
+				class="w-25 form-add border border-dark rounded-3 p-4"
+				th:action="@{/student/edit/{uid} (uid=*{uid})}"
+				th:object="${us}"
+				method="post"
+			>
+				<div class="form-group">
+					<label for="formGroupNameInput">Id</label>
+					<input
+						type="text"
+						class="form-control mt-2"
+						name="uid"
+						id="formGroupNameInput"
+						placeholder="Name"
+						th:field="*{uid}"
+						th:value="*{uid}"
+						autocomplete="off"
+						disabled
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupNameInput">Name</label>
+					<input
+						type="text"
+						class="form-control mt-2"
+						name="name"
+						id="formGroupNameInput"
+						placeholder="Name"
+						th:field="*{name}"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupWeightInput">Weight (kg)</label>
+					<input
+						type="number"
+						class="form-control mt-2"
+						name="weight"
+						id="formGroupWeightInput"
+						placeholder="Weight (kg)"
+						autocomplete="off"
+						th:field="*{weight}"
+						step="any"
+						min="0"
+						onkeyup="if(value<0) value=0;"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupHeightInput">Height (cm)</label>
+					<input
+						type="number"
+						class="form-control mt-2"
+						name="height"
+						id="formGroupHeightInput"
+						placeholder="Height (cm)"
+						autocomplete="off"
+						th:field="*{height}"
+						step="any"
+						min="0"
+						onkeyup="if(value<0) value=0;"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupHairColorInput">Hair Color</label>
+					<input
+						type="text"
+						class="form-control mt-2"
+						name="hairColor"
+						id="formGroupHairColorInput"
+						placeholder="Hair Color"
+						th:field="*{hairColor}"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupMajorInput">Major</label>
+					<input
+						type="text"
+						class="form-control mt-2"
+						name="major"
+						id="formGroupMajorInput"
+						placeholder="Major"
+						th:field="*{major}"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupGPAInput">GPA</label>
+					<input
+						type="number"
+						class="form-control mt-2"
+						name="gpa"
+						id="formGroupGPAInput"
+						placeholder="GPA"
+						th:field="*{gpa}"
+						step="any"
+						min="0"
+						onkeyup="if(value<0) value=0;"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<label for="formGroupGenderInput">Gender</label>
+					<select
+						class="form-select mt-2"
+						aria-label="Default select example"
+						name="gender"
+					>
+						<option selected th:field="*{gender}" th:value="*{gender}"></option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="Others">Others</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-primary mt-4">Submit</button>
+			</form>
+		</div>
+	</body>
+</html>
